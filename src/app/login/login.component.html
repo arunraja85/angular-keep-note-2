@@ -1,0 +1,23 @@
+<div class="login-form-container">
+    <h2 class="jumbotron login-form-header border border-primary rounded"> Login Form </h2>
+
+    <form action="" [formGroup]="loginForm" class="login-form" (ngSubmit)="loginSubmit(loginForm)">
+        <mat-form-field>
+            <input matInput placeholder="Enter the UserName" formControlName="username">
+            <mat-error *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">Enter the User Name</mat-error>
+            <mat-error *ngIf="loginForm.get('username').hasError('minlength') && loginForm.get('username').touched">User Name Min Length is not Matched</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="password" placeholder="Enter the PassWord" formControlName="password">
+            <mat-error *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">Enter the PassWord</mat-error>
+            <mat-error *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched">PassWord Min Length is not Matched</mat-error>
+        </mat-form-field>
+
+        <!-- <button mat-button primary [disabled]="loginForm.invalid">Submit</button> -->
+        <div>
+        <button mat-button class="login-form-button" [disabled]="loginForm.invalid">Submit</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,15 @@
+.keep-note-expansion-panel{
+    width: 60vw;
+    margin: 10vh auto;
+}
+
+.keep-note-form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-container{
+    display: flex;
+    flex-direction: row;
+    margin: 10vh auto;
+}
